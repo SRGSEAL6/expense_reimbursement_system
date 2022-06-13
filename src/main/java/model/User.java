@@ -1,10 +1,6 @@
 package model;
 
 public interface User {
-
-    void submit_Request();
-    void getPending();
-    void getResolved();
     String getEmp_Name();
     String getEmp_ID();
     Position getEmp_Position();

@@ -1,7 +1,8 @@
 package model;
 
 public class Reimbursement {
-    private String emp_Name, emp_ID, details, status = "pending";
+    private String emp_Name, emp_ID, reim_Details;
+    Status reim_Status = Status.PENDING;
     double amount;
 
     public Reimbursement(String emp_Name, String emp_ID, double amount) {
@@ -19,19 +20,19 @@ public class Reimbursement {
     }
 
     public String getDetails() {
-        return details;
+        return reim_Details;
     }
 
     public double getAmount() {
         return amount;
     }
 
-    public String getStatus() {
-        return status;
+    public Status getStatus() {
+        return reim_Status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(Status status) {
+        this.reim_Status = status;
     }
 
     @Override

@@ -11,18 +11,6 @@ public class Employee implements User {
         this.emp_ID = emp_ID;
         this.emp_Position = emp_Position;
     }
-
-    public void submit_Request() {
-
-    }
-    public void getPending() {
-
-    }
-
-    public void getResolved() {
-
-    }
-
     public String getEmp_Name() {
         return emp_Name;
     }
