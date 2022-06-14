@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Employee implements User {
     private String emp_Name, emp_ID;
     private Position emp_Position;
-
     public Employee(String emp_Name, String emp_ID, Position emp_Position) {
         this.emp_Name = emp_Name;
         this.emp_ID = emp_ID;

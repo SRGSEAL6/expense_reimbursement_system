@@ -2,6 +2,7 @@ package repository;
 
 import model.Employee;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeRepository {
@@ -9,4 +10,5 @@ public interface EmployeeRepository {
     void update(Employee employee);
     void delete(Employee employee);
     void save(Employee employee);
+    List<Employee>  allEmployees();
 }
