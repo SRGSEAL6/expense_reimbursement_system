@@ -1,14 +1,27 @@
 package model;
 
 public class Reimbursement {
-    private String emp_Name, emp_ID, reim_Details;
-    Status reim_Status = Status.PENDING;
-    double amount;
+    private String reim_Id, emp_Name, emp_ID, reim_Details;
+    private Status reim_Status = Status.PENDING;
+    private double amount;
 
-    public Reimbursement(String emp_Name, String emp_ID, double amount) {
+    public Reimbursement(String emp_Name, String emp_ID,String reim_Details, double amount) {
         this.emp_Name = emp_Name;
         this.emp_ID = emp_ID;
+        this.reim_Details = reim_Details;
         this.amount = amount;
+    }
+    public Reimbursement(String reim_Id,String emp_Name, String emp_ID,String reim_Details,Status reim_Status, double amount) {
+        this.emp_Name = emp_Name;
+        this.emp_ID = emp_ID;
+        this.reim_Details = reim_Details;
+        this.reim_Status = reim_Status;
+        this.amount = amount;
+        this.reim_Id = reim_Id;
+    }
+
+    public String getReim_Id() {
+        return reim_Id;
     }
 
     public String getEmp_Name() {
@@ -38,9 +51,12 @@ public class Reimbursement {
     @Override
     public String toString() {
         return "Reimbursement{" +
-                "emp_Name='" + emp_Name + '\'' +
+                "reim_Id='" + reim_Id + '\'' +
+                ", emp_Name='" + emp_Name + '\'' +
                 ", emp_ID='" + emp_ID + '\'' +
+                ", reim_Details='" + reim_Details + '\'' +
+                ", reim_Status=" + reim_Status +
                 ", amount=" + amount +
-                '}';
+                '}' + "\n";
     }
 }

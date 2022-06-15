@@ -47,7 +47,7 @@ public class JDBCEmployeeRepository implements EmployeeRepository {
             PreparedStatement ps = connection.prepareStatement(sqlCode);
             ps.setString(1, employee.getEmp_Name());
             ps.setString(2, employee.getEmp_ID());
-            int rows = ps.executeUpdate();
+            ps.executeUpdate();
         } catch (SQLException e) {
             LOG.error("error updating employee: " + employee.getEmp_ID());
             e.printStackTrace();
@@ -96,7 +96,6 @@ public class JDBCEmployeeRepository implements EmployeeRepository {
                 Employee employee = new Employee(rs.getString("emp_name"), rs.getString("emp_id"), Position.valueOf(rs.getString("emp_position")));
                 dbList.add(employee);
             }
-            return dbList;
         } catch (SQLException e) {
             LOG.error("Error loading all employees: ");
             e.printStackTrace();

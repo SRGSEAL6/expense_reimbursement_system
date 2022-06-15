@@ -1,10 +1,9 @@
-import model.Employee;
-import model.Manager;
-import model.Position;
-import model.User;
+import model.*;
 import org.apache.log4j.Logger;
 import repository.JDBCEmployeeRepository;
+import repository.JDBCReimbursementRepo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,14 +12,14 @@ public class Application {
     public static void main(String[] args) {
         /*Init---------*/
         JDBCEmployeeRepository employeeRepo = new JDBCEmployeeRepository();
+        JDBCReimbursementRepo reimbursementRepo = new JDBCReimbursementRepo();
         /*Use-----------*/
-        //Employee emp1 = new Employee("Javier", "1", Position.EMPLOYEE);
-        //System.out.println(emp1);
-        //employeeRepo.save(emp1);
-        Optional<Employee> emp2 = employeeRepo.findByID("2");
-        System.out.println(emp2);
-        List<Employee> allEmplo = employeeRepo.allEmployees();
-        System.out.println(allEmplo);
+        List<Reimbursement> reimbursementsADB = new ArrayList<>();
+/*        reimbursementRepo.save(new Reimbursement("Javier", "1","First reimbursement", 2000.00));
+        reimbursementRepo.save(new Reimbursement("Javier", "1","Second reimbursement", 1500.00));*/
+        reimbursementRepo.update(new Reimbursement("1","Javier", "1","First reimbursement",Status.APPROVED, 2000.00));
+        reimbursementsADB = reimbursementRepo.allReim();
+        System.out.println(reimbursementsADB);
     }
 
 }
