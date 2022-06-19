@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Reimbursement Request Form</title>
+</head>
+<body class="bg-dark">
+<!--- Reimbursement Request Form ---->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                Back
+            </a>
+        </div>
+    </nav>
+    <Header >
+        <div class="text-light">
+            <h1 class="text-center pt-5">
+                Expense Reimbursement Request
+            </h1>
+            <p class="text-center m-3">
+                Please fill out form
+            </p>
+        </div>
+    </Header>
+
+    <section id="#reimbursment" class="bg-dark text-light p-5">
+        <div class="container">
+            <div class="row">
+                <form method="post" action="expenseRequest">
+
+<!------ Employee Information -------------------------->
+                    <div>
+                        <h5 class="mb-4"><strong>Employee Information</strong></h5>
+                        <div class="row">
+                            <div class="col-md-6 col-lg mb-3">
+                                <label for="formF-Name" class="form-label"><strong>First Name</strong></label>
+                                <input class="form-control border border-dark" id="formF-Name">
+                            </div> 
+                            <div class="col-md-6 col-lg mb-3">
+                                <label for="formL-Name" class="form-label"><strong>Last Name</strong></label>
+                                <input class="form-control border border-dark" id="formL-Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-lg mb-3">
+                                <label for="formEmail" class="form-label"><strong>Employee Email</strong></label>
+                                <input class="form-control border border-dark" id="formEmail">
+                            </div> 
+                            <div class="col-md-6 col-lg mb-3">
+                                <label for="formPosition" class="form-label"><strong>Position</strong></label>
+                                <select class="form-select mb-5 border border-dark" id="formPosition">
+                                    <option selected></option>
+                                    <option value="1">Associate</option>
+                                    <option value="2">Manager</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+<!------ # 1 Expense Information --------------------------------->       
+                    <div class="container border border-1 border-dark rounded-2 bg-secondary p-5">
+                        <h5 class="mb-4"><strong>Expense 1</strong></h5>
+                        <div class="row align-items-start">
+                            <div class="col-md-6 col-lg-4 mb-3">
+                               <label for="expenseDate1" class="form-label"><strong>Date of Expenditure</strong></label>
+                               <input type="text" class="form-control border border-1 border-dark" id="expenseDate1" placeholder="__/__/____"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expense1" class="form-label"><strong>Expenditure</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expense1"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expenseAmount1" class="form-label"><strong>Amount</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expenseAmount1" placeholder="$0.00"> 
+                            </div>
+                        </div>
+                        <div class="col-lg mb-4">
+                            <label for="expenseDescription1" class="form-label"><strong>Description</strong><br><span>Please be detailed with the reason for the expense.</span></label>
+                            <textarea type="text" class="form-control border border-1 border-dark" id="expenseDescription1"></textarea>
+                        </div>
+    <!------ Upload Multiple Reciept's -------------------------->
+                        <div class="col-lg mb-4">
+                            <label for="expenseReciept1" class="form-label">Upload Reciepts</label>
+                            <input class="form-control border border-1 border-dark" type="file" id="expenseReciept1" multiple>
+                        </div>
+                    </div>
+
+<!------ # 2 Expense Information --------------------------------->       
+                    <div class="container border border-1 border-dark rounded-2 bg-secondary p-5 my-5">
+                        <h5 class="mb-4"><strong>Expense 2</strong></h5>
+                        <div class="row align-items-start">
+                            <div class="col-md-6 col-lg-4 mb-3">
+                            <label for="expenseDate2" class="form-label"><strong>Date of Expenditure</strong></label>
+                            <input type="text" class="form-control border border-1 border-dark" id="expenseDate2" placeholder="__/__/____"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expense2" class="form-label"><strong>Expenditure</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expense2"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expenseAmount2" class="form-label"><strong>Amount</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expenseAmount2" placeholder="$0.00"> 
+                            </div>
+                        </div>
+                        <div class="col-lg mb-4">
+                            <label for="expenseDescription2" class="form-label"><strong>Description</strong><br><span>Please be detailed with the reason for the expense.</span></label>
+                            <textarea type="text" class="form-control border border-1 border-dark" id="expenseDescription2"></textarea>
+                        </div>
+                    <!------ Upload Multiple Reciept's -------------------------->
+                        <div class="col-lg mb-4">
+                            <label for="expenseReciept2" class="form-label">Upload Reciepts</label>
+                            <input class="form-control border border-1 border-dark" type="file" id="expenseReciept2" multiple>
+                        </div>
+                    </div>
+
+<!------ # 3 Expense Information --------------------------------->       
+                    <div class="container border border-1 border-dark rounded-2 bg-secondary p-5 my-5">
+                        <h5 class="mb-4"><strong>Expense 3</strong></h5>
+                        <div class="row align-items-start">
+                            <div class="col-md-6 col-lg-4 mb-3">
+                               <label for="expenseDate3" class="form-label"><strong>Date of Expenditure</strong></label>
+                               <input type="text" class="form-control border border-1 border-dark" id="expenseDate3" placeholder="__/__/____"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expense3" class="form-label"><strong>Expenditure</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expense3"> 
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <label for="expenseAmount3" class="form-label"><strong>Amount</strong></label>
+                                <input type="text" class="form-control border border-1 border-dark" id="expenseAmount3" placeholder="$0.00"> 
+                            </div>
+                        </div>
+                        <div class="col-lg mb-4">
+                            <label for="expenseDescription3" class="form-label"><strong>Description</strong><br><span>Please be detailed with the reason for the expense.</span></label>
+                            <textarea type="text" class="form-control border border-1 border-dark" id="expenseDescription3"></textarea>
+                        </div>
+    <!------ Upload Multiple Reciept's -------------------------->
+                        <div class="col-lg mb-4">
+                            <label for="expenseReciept3" class="form-label">Upload Reciepts</label>
+                            <input class="form-control border border-1 border-dark" type="file" id="expenseReciept3" multiple>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="mb-5 text-end">
+                        <button class="btn btn-lg btn-primary rounded-pill px-5" type="submit">Submit Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -3,8 +3,11 @@ package model;
 import java.util.Objects;
 
 public class Employee implements User {
-    private String emp_Name, emp_ID;
+    private String emp_Name, emp_ID, username, password;
     private Position emp_Position;
+    public Employee(){
+
+    }
     public Employee(String emp_Name, String emp_ID, Position emp_Position) {
         this.emp_Name = emp_Name;
         this.emp_ID = emp_ID;
@@ -28,6 +31,22 @@ public class Employee implements User {
 
     public Position getEmp_Position() {
         return emp_Position;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

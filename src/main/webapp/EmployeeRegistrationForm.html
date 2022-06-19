@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Employee Registration Form</title>
+</head>
+<body>
+    <!---- Managers: Register Employee Login Form ---->
+
+    <section>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Employee Registration
+                </div>
+                <div class="card-body">
+                    <form method="post" action="register">
+                        <h2 class="text-center mb-4">
+                            Employee Information
+                        </h2>
+                        <div class="row">
+                            <div class="col">
+                                <label for="registerEmployeeF-Name" class="form-label">First Name</label>
+                                <input class="form-control" id="registerEmployeeF-Name"/>
+                            </div> 
+                            <div class="col">
+                                <label for="registerEmployeeL-Name" class="form-label">Last Name</label>
+                                <input class="form-control" id="registerEmployeeL-Name"/>
+                            </div>
+                            <div class="col">
+                                <label for="registerEmployeePosition" class="form-label">Position</label>
+                                <input class="form-control" id="registerEmployeePosition"/>
+                            </div>
+                        </div>
+                        <h2 class="text-center mt-4">
+                            Login Registration
+                        </h2>                           
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Employee Email</label>
+                            <input class="form-control" id="registerEmail"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Employee Password</label>
+                            <input class="form-control" id="registerPassword"/>
+                        </div>
+                        <button href="#" class="btn btn-dark m-3" type="submit">Register</button> <!--- provide link back manager page --->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
