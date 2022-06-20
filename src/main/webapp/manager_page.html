@@ -3,41 +3,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fe39c9d352.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Managers</title>
 </head>
 <body>
+
 <!--- Navbar --->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
     <div class="container">
         <a href="#" class="navbar-brand">
-            Revature
+            Expense Reimbursement System
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
         >
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a href="#ReimbursementRequests" class="nav-link">
-                        Reimbursement Requests
+                    <a href="./ReimbursementRequestForm.html" class="nav-link">
+                        Reimbursement Request Form
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#Profile" class="nav-link">
-                        Profile
+                    <a href="./EmployeeRegistrationForm.html" class="nav-link">
+                        Employee Registration
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#Managers" class="nav-link">
-                        We Are The Managers
+                    <a href="./View_All_Employees.html" class="nav-link">
+                        View All Employees
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#Logout" class="nav-link">
+                    <a href="./View_All_ERR_Submissions.html" class="nav-link">
+                        Reimbursement Submissions
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./login_page.html" class="nav-link">
                         Logout
                     </a>
                 </li>
@@ -49,183 +60,111 @@
 <!-----Introduction Container ------>
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">
-        <div class="d-sm-flex align-items-center">
-            <div>
+        <div class="d-sm-flex p-3 align-items-center">
+            <div class="m-4">
                 <h1>
                     Hello
                     <span class="text-warning">
-                        Revature
-                    </span>
+                            Revature
+                        </span>
                 </h1>
-                <p class="lead my-4"> <!--- WRITE SOMETHING ABOUT HOW WONDERFUL/IMPORTANT Managers ARE TO REVATURE --->
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                  Reprehenderit soluta praesentium obcaecati accusamus, fugiat illo laudantium blanditiis
-                  quisquam autem assumenda, minus, minima ut labore eaque voluptatem fugit sed officiis recusandae!
+                <p class="lead">
+                    Employees are the soul of our company. We value everyone and want to make sure any business-related expense is reimbursed.
+                    All you have to do is fill out an Expense Reimbursement Form.
                 </p>
-                <button href="#" class="btn btn-primary btn-lg"><!--- NEED LINK TO REQUEST FORM --->
-                    Submit a Reimbursement Request
-                </button> 
+                <button href="./ReimbursementRequestForm.html" class="btn btn-primary btn-lg m-3 p-3 rounded-pill">
+                    Reimbursement Request
+                </button>
             </div>
-            <image class="img-fluid w-50 d-none d-sm-block" src="#" alt=""/> <!--- NEED PICTURE OR LOGO - Customize --->
+            <image class="img-fluid w-50 mx-2 d-none d-sm-block" src="./images/navbar_workforce.jpeg" alt="A group of employees sitting at a table smiling and laughing."/>
+        </div>
+    </div>
+</section>
+
+<!--- Manager Responsibilities ---->
+
+<section class="p-5">
+    <div class="container">
+        <div>
+            <h1 class="row-expand text-center pb-3">
+                Finance Manager
+            </h1>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-6">
+                <div class="card bg-primary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1">
+                            <image src="./images/manager-register-employee.jpg" class="rounded-circle" width="200px" height="175px" alt="Clip-art small employees walking on an extremely large computer working on registering new member to a company.">
+                            </image>
+                        </div>
+                        <h2 class="card-title">
+                            <span class="text-warning">Employee Registration</span>
+                        </h2>
+                        <p class="card-text h5">
+                            Register a new employee to access the Expense Reimbursement System.
+                        </p>
+                        <button href="./EmployeeRegistrationForm.html" class="btn btn-dark rounded-pill m-3" id="employeeRegistration">
+                            Register Employee
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card bg-primary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1">
+                            <image src="./images/manager-view-all-employees.jpg" class="rounded-circle" width="200px" height="175px" alt="Clip-art of a group of five business professionals and a large hand coming from the top of the picture. The hand is using it's pointer finger and thumb making an illusion of picking up a male figure.">
+                            </image>
+                        </div>
+                        <h2 class="card-title">
+                            <span class="text-warning">View All Employees</span>
+                        </h2>
+                        <p class="card-text h5">
+                            View all employees with a registered account with the Expense Reimbursement System.
+                        </p>
+                        <button href="./View_All_Employees.html" class="btn btn-dark rounded-pill m-3" id="viewEmployees">
+                            View Employees
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-4">
+                <div class="card bg-primary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1">
+                            <image src="./images/manager-reimbursement-submissions.jpg" class="rounded-circle" width="200px" height="175px" alt="Clip-art of a man on top of an oversized computer with popout website and large coins with dollar signs.">
+                            </image>
+                        </div>
+                        <h2 class="card-title">
+                            <span class="text-warning">Reimbursement Submissions</span>
+                        </h2>
+                        <p class="card-text h5">
+                            View all current and previous submitted reimbursement requests.
+                        </p>
+                        <button href="./View_All_ERR_Submissions.html" class="btn btn-dark rounded-pill m-3" id="viewSubmissions">
+                            View Submissions
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 
-<!--- Navbar --->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-        <div class="container">
-            <a href="#" class="navbar-brand">
-                Revature
-            </a>
-            <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navmenu"
-            >
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="#Questions" class="nav-link">
-                            Questions
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#ReimbursementRequests" class="nav-link">
-                            Reimbursement Requests
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#Profile" class="nav-link">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#Managers" class="nav-link">
-                            Managers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#Logout" class="nav-link">
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-----Introduction Container ------>
-    <section class="bg-dark text-light p-5 text-center text-sm-start">
-        <div class="container">
-            <div class="d-sm-flex align-items-center">
-                <div>
-                    <h1>
-                        Hello
-                        <span class="text-warning">
-                            Revature
-                        </span>
-                    </h1>
-                    <p class="lead my-4"> <!--- WRITE SOMETHING ABOUT HOW WONDERFUL/IMPORTANT EMPLOYEE ARE TO REVATURE --->
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                      Reprehenderit soluta praesentium obcaecati accusamus, fugiat illo laudantium blanditiis
-                      quisquam autem assumenda, minus, minima ut labore eaque voluptatem fugit sed officiis recusandae!
-                    </p>
-                    <button href="#" class="btn btn-primary btn-lg"><!--- NEED LINK TO REQUEST FORM --->
-                        Submit a Reimbursement Request
-                    </button> 
-                </div>
-                <image class="img-fluid w-50 d-none d-sm-block" src="#" alt=""/> <!--- NEED PICTURE OR LOGO - Customize --->
-            </div>
-        </div>
-    </section>
-
-    <!--- Manager Responsibilities ---->
-
-    <section class="p-5"> 
-        <div class="container">
-            <div class="row text-center">
-                <div clas="g-col-4">
-                    <div class="card bg-secondary text-light">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <image src="#" alt=""> <!---- Add icon or image ---->
-                                    Image
-                                </image>
-                            </div>
-                            <h3 class="card-title mb-3">
-                                Employee Registration
-                            </h3>
-                            <p class="card-text">
-                                Register a new employee to access the Expense Reimbursement System
-                            </p>
-                            <button href="#" class="btn btn-primary">
-                                Employee Registration Form
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div clas="col-md">
-                    <div class="card bg-secondary text-light">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <image src="#" alt=""> <!---- Add icon or image ---->
-                                    Image
-                                </image>
-                            </div>
-                            <h3 class="card-title mb-3">
-                                Card Title
-                            </h3>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde.
-                            </p>
-                            <button href="#" class="btn btn-primary">
-                                Button
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div clas="col-md">
-                    <div class="card bg-secondary text-light">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <image src="#" alt=""> <!---- Add icon or image ---->
-                                    Image
-                                </image>
-                            </div>
-                            <h3 class="card-title mb-3">
-                                Card Title
-                            </h3>
-                            <p class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, rem?
-                            </p>
-                            <button href="#" class="btn btn-primary">
-                                Button
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--- FOOTER  --->
-    <footer class="p-5 bg-dark text-white text-center position-relative">
-        <div class="container">
-            <p class="lead">
+<!--- FOOTER  --->
+<footer class="p-5 bg-dark position-relative">
+    <div class="container">
+        <div class="row">
+            <h4 class="lead text-center text-primary">
                 Copyright &copy; 2022 Expense Reimbursement System
-            </p>
-            <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                <i class="bi bi-arrow-up-circle">get an up arrow icon</i>
-            </a>
+            </h4>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
