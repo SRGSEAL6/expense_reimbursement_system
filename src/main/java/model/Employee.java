@@ -8,10 +8,12 @@ public class Employee implements User {
     public Employee(){
 
     }
-    public Employee(String emp_Name, String emp_ID, Position emp_Position) {
+    public Employee(String emp_Name, String emp_ID,String username,String password, Position emp_Position) {
         this.emp_Name = emp_Name;
         this.emp_ID = emp_ID;
         this.emp_Position = emp_Position;
+        this.username = username;
+        this.password = password;
     }
     public String getEmp_Name() {
         return emp_Name;

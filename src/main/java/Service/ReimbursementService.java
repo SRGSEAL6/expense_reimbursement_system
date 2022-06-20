@@ -2,6 +2,7 @@ package Service;
 
 import Web.ReimbursementServlet;
 import model.Reimbursement;
+import model.Status;
 import repository.JDBCReimbursementRepo;
 
 import java.util.ArrayList;
@@ -14,14 +15,15 @@ public class ReimbursementService implements ReimbursementInterface{
     public void submit_Request(Reimbursement reimbursement) {
         reimbursementRepo.save(reimbursement);
     }
-
     @Override
-    public void getPending() {
+    public List<Reimbursement> getByStatus(Status status) {
         allReimbursements = reimbursementRepo.allReim();
-    }
-
-    @Override
-    public void getResolved() {
-
+        List<Reimbursement> reimbursements  = new ArrayList<>();
+        allReimbursements.forEach(reimbursement -> {
+            if (reimbursement.getStatus().equals(status)){
+                reimbursements.add(reimbursement);
+            }
+        });
+        return reimbursements;
     }
 }

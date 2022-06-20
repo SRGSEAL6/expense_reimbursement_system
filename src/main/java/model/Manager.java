@@ -1,8 +1,8 @@
 package model;
 
 public class Manager extends Employee{
-    public Manager(String emp_Name, String emp_ID, Position emp_Position) {
-        super(emp_Name, emp_ID, emp_Position);
+    public Manager(String emp_Name, String emp_ID,String username,String password, Position emp_Position) {
+        super(emp_Name, emp_ID,username,password, emp_Position);
     }
     void action_Request(){
 

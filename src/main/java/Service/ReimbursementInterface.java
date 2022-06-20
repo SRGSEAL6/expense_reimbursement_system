@@ -1,9 +1,11 @@
 package Service;
 
 import model.Reimbursement;
+import model.Status;
+
+import java.util.List;
 
 public interface ReimbursementInterface {
     public void submit_Request(Reimbursement reimbursement);
-    public void getPending();
-    public void getResolved();
+    public List<Reimbursement> getByStatus(Status status);
 }
