@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-center">
             <div class="card rounded-circle bg-primary border-dark p-5">
                 <div class="card-body">
-                    <form class="m-5" action="login">
+                    <form class="m-5" action="login" method="post">
                         <div class="text-center">
                             <i class='fas fa-eye' style="font-size:150px;"></i>
                             <h1 class="m-2 text-center text-warning" style="font-size:64px;">
@@ -25,10 +25,10 @@
                         </div>
                         <br>
                         <div class="mb-3 h2">
-                            <input class="form-control rounded-pill" placeholder="Email"/>
+                            <input class="form-control rounded-pill" name="username" placeholder="Username"/>
                         </div>
                         <div class="mb-3 h2">
-                            <input type="password" class="form-control rounded-pill" placeholder="Password"/>
+                            <input type="password" name="password" class="form-control rounded-pill" placeholder="Password"/>
                         </div>
                         <div class="text-end mb-3">
                             <button href="#" class="btn btn-lg btn-dark rounded-pill" type="submit"> <!--- Need to reference employee or manager page --->
