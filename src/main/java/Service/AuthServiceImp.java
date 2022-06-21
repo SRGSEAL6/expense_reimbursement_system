@@ -17,7 +17,7 @@ public class AuthServiceImp implements AuthService{
     @Override
     public boolean authenticate(String username, String password) {
         Optional<Employee> employee = userRepository.findByUsername(username);
-        if (employee == null)
+        if (employee.isEmpty())
             return false;
         BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), employee.get().getPassword());
         if (result.verified)
