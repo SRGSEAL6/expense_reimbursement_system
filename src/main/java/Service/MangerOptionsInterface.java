@@ -15,7 +15,7 @@ public interface MangerOptionsInterface {
     public List<Reimbursement> view_allRequests();
     public List<Employee> view_AllEmployees();
     public List<Reimbursement> getByStatus(Status status);
-    default void register(String emp_Name, String emp_ID,String username,String password, Position emp_Position) {
+    default void register(String emp_Name,String username,String password, Position emp_Position) {
         Employee employee = new Employee();
         employee.setUsername(username);
         String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
