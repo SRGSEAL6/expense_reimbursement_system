@@ -60,7 +60,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Date of Submission</th>
+                        <th scope="col">Submission ID</th>
                         <th scope="col">Description</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Status</th>
@@ -68,15 +68,15 @@
                 </thead>
                 <tbody>
                     <%
-                        List<Employee> employees = (List<Employee>) request.getAttribute("all-employees");
-                            for(Employee employee:employees){
+                        List<Reimbursement> employeeReimSub = (List<Reimbursement>) request.getAttribute("reimbursementList");
+                            for(Reimbursement employeeReimbursements:employeeReimSub){
                     %>
 
                     <tr>
-                        <td> <%=employee.getEmp_Name() %> </td>
-                        <td> <%=employee.getEmp_Position() %> </td>
-                        <td> <%=employee.getUsername() %> </td>
-                        <td> <%=employee.getPassword() %> </td>
+                        <td> <%=employeeReimbursements.getReimId() %> </td>
+                        <td> <%=employeeReimbursements.getReimDetails() %> </td>
+                        <td> <%=employeeReimbursements.getAmount() %> </td>
+                        <td> <%=employeeReimbursements.getStatus() %> </td>
                     </tr>
 
                     <%
