@@ -70,7 +70,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Employee ID</th>
                         <th>Employee Name</th>
                         <th>Employee Position</th>
                         <th>Username</th>
@@ -84,7 +83,6 @@
                     %>
 
                     <tr>
-                        <td> <%=employee.getEmp_ID() %> </td>
                         <td> <%=employee.getEmp_Name() %> </td>
                         <td> <%=employee.getEmp_Position() %> </td>
                         <td> <%=employee.getUsername() %> </td>
