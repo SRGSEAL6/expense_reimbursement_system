@@ -65,40 +65,51 @@
 </Header>
 <!--- Employees Registered to ERS --->
 
-<section>
-  <div class="p-3">
-    <table class="table">  <!--- Need Servlet for viewing registered employees  -->
-      <thead>
-      <tr>
-        <th>Employee ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Employee Email</th>
-        <th>Employee Password</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th></th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+    <section>
+        <div class="p-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Employee Name</th>
+                        <th>Employee Position</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        List<Employee> employees = (List<Employee>) request.getAttribute("all-employees");
+                            for(Employee employee:employees){
+                    %>
+
+                    <tr>
+                        <td> <%=employee.getEmp_ID() %> </td>
+                        <td> <%=employee.getEmp_Name() %> </td>
+                        <td> <%=employee.getEmp_Position() %> </td>
+                        <td> <%=employee.getUsername() %> </td>
+                        <td> <%=employee.getPassword() %> </td>
+                    </tr>
+
+                    <%
+                        }
+                    %>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
 
 <!--- FOOTER  --->
-<footer class="p-5 bg-dark position-relative">
-  <div class="container">
-    <div class="row">
-      <h4 class="lead text-center text-primary">
-        Copyright &copy; 2022 Expense Reimbursement System
-      </h4>
-    </div>
-  </div>
-</footer>
+    <footer class="p-5 bg-dark position-relative">
+      <div class="container">
+        <div class="row">
+          <h4 class="lead text-center text-primary">
+            Copyright &copy; 2022 Expense Reimbursement System
+          </h4>
+        </div>
+      </div>
+    </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
