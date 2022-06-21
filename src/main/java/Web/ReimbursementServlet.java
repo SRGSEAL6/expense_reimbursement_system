@@ -25,7 +25,7 @@ public class ReimbursementServlet extends HttpServlet {
         String amount = req.getParameter("amount");
         Reimbursement reimbursement = new Reimbursement(empName,empID,details,Double.parseDouble(amount));
         reimbursementService.submit_Request(reimbursement);
-        resp.sendRedirect("welcome.html");
+        resp.sendRedirect("ReimbursementRequestForm.html");
     }
 
 }

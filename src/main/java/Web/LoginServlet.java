@@ -2,6 +2,7 @@ package Web;
 
 import Service.AuthService;
 import Service.AuthServiceImp;
+import model.Employee;
 import repository.JDBCEmployeeRepository;
 
 import javax.servlet.ServletException;
@@ -14,8 +15,8 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-    JDBCEmployeeRepository employee = new JDBCEmployeeRepository();
-    AuthService authService = new AuthServiceImp(employee);
+    JDBCEmployeeRepository employeeRepository = new JDBCEmployeeRepository();
+    AuthService authService = new AuthServiceImp(employeeRepository);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,8 +34,10 @@ public class LoginServlet extends HttpServlet {
             System.out.println(new Date(session.getCreationTime()));
             System.out.println(new Date(session.getLastAccessedTime()));
 */
-
+            Employee employee = employeeRepository.findByUsername(username).get();
             session.setAttribute("current-user",username);
+            session.setAttribute("id", employee.getEmp_ID());
+            session.setAttribute("position", employee.getEmp_Position());
             resp.sendRedirect("employee_page.html");
         }
     }
