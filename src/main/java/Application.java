@@ -10,7 +10,7 @@ import java.util.List;
 public class Application {
 /*    public static void main(String[] args) {
         ManagerOptions managerOptions = new ManagerOptions();
-        managerOptions.register("Javier","1","username","password", Position.MANAGER);
+        managerOptions.register("Javi","2","username2","password", Position.EMPLOYEE);
 
     }*/
 }

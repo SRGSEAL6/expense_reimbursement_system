@@ -3,6 +3,7 @@ package Web;
 import Service.AuthService;
 import Service.AuthServiceImp;
 import model.Employee;
+import model.Position;
 import repository.JDBCEmployeeRepository;
 
 import javax.servlet.ServletException;
@@ -22,6 +23,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password=req.getParameter("password");
+        String page = "";
         boolean b=authService.authenticate(username,password);
         if(!b){
             resp.sendRedirect("login_page.html");
@@ -38,7 +40,13 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("current-user",username);
             session.setAttribute("id", employee.getEmp_ID());
             session.setAttribute("position", employee.getEmp_Position());
-            resp.sendRedirect("employee_page.html");
+            if(employee.getEmp_Position().equals(Position.MANAGER)){
+                page = "manager_page.html";
+               // resp.sendRedirect("manager_page.html");
+            }else{
+                page = "employee_page.html";
+            }
+            resp.sendRedirect(page);
         }
     }
 }
