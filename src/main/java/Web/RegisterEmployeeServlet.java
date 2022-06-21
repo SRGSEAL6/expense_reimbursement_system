@@ -16,8 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
 
 @WebServlet(urlPatterns = {"/register"})
 public class RegisterEmployeeServlet extends HttpServlet {
@@ -28,13 +26,17 @@ public class RegisterEmployeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String emp_Name = req.getParameter("emp_Name");
-        Position emp_Position = Position.valueOf(req.getParameter("emp_Position"));
+        String emp_ID = req.getParameter("emp_ID");
+        String fname = req.getParameter("fname");
+        String lname = req.getParameter("lname");
+        StringBuilder emp_Name = new StringBuilder(fname + " " + lname);
+    //    Position emp_Position = req.Enum("emp_Position");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
         Employee employee = new Employee();
-        employee.setEmp_Name(emp_Name);
+        employee.setEmp_ID(emp_ID);
+        employee.setEmp_Name(emp_Name.toString());
         employee.setEmp_Position(Position.EMPLOYEE);
         employee.setUsername(username);
         employee.setPassword(password);
@@ -43,29 +45,7 @@ public class RegisterEmployeeServlet extends HttpServlet {
         resp.sendRedirect("EmployeeRegistrationForm.html");
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+}
 
 
-        HttpSession session = req.getSession();
-        System.out.println(session.isNew());
-        System.out.println(session.getId());
-        System.out.println(new Date(session.getCreationTime()));
-        System.out.println(new Date(session.getLastAccessedTime()));
 
-        String currentUser = (String) session.getAttribute("current-user");
-        System.out.println(currentUser);
-        System.out.println(req.getRequestURI());
-
-        if(currentUser != null) {
-
-            String reURI = req.getRequestURI();
-            // read
-            if (reURI.equals("/revature.home.project1/View_All_Employees.jsp")) {
-                List<Employee> employees = employeeRepository.allEmployees();
-                req.setAttribute("all-employees", employees);
-                req.getRequestDispatcher("View_All_Employees.jsp").forward(req, resp);
-        }else{
-            resp.sendRedirect("manager_page.html");
-        }
-    }
