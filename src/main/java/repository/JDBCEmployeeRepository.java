@@ -89,13 +89,12 @@ public class JDBCEmployeeRepository implements EmployeeRepository {
     public void save(Employee employee) {
         LOG.info("Saving employee: " + employee.getEmp_ID());
         try (Connection connection = SQLConnectionFactory.getConnection()) {
-            String sqlCode = "insert into employees (emp_id,username,password,emp_name, emp_position) values (?,?,?,?,cast(? as positions))";
+            String sqlCode = "insert into employees (emp_name,username,password, emp_position) values (?,?,?,cast(? as positions))";
             PreparedStatement ps = connection.prepareStatement(sqlCode);
-            ps.setInt(1, Integer.parseInt(employee.getEmp_ID()));
+            ps.setString(1, employee.getEmp_Name());
             ps.setString(2, employee.getUsername());
             ps.setString(3, employee.getPassword());
-            ps.setString(4, employee.getEmp_Name());
-            ps.setString(5, String.valueOf(employee.getEmp_Position()));
+            ps.setString(4, String.valueOf(employee.getEmp_Position()));
             ps.executeUpdate();
         } catch (SQLException e) {
             LOG.error("Error saving employee" + employee.getEmp_ID());

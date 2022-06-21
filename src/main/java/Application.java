@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
         ManagerOptions managerOptions = new ManagerOptions();
-        managerOptions.register("Javi","2","username2","password", Position.EMPLOYEE);
+        managerOptions.register("Javi","user3","password", Position.EMPLOYEE);
 
-    }*/
+    }
 }
