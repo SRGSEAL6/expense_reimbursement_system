@@ -41,6 +41,10 @@ public class Employee implements User {
         return emp_Position;
     }
 
+    public void setEmp_Position(Position position){
+        this.emp_Position = position;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -75,6 +79,8 @@ public class Employee implements User {
         return "Employee{" +
                 "emp_Name='" + emp_Name + '\'' +
                 ", emp_ID='" + emp_ID + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", emp_Position=" + emp_Position +
                 '}';
     }
