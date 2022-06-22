@@ -1,6 +1,7 @@
 <%@ page import="model.Reimbursement" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Service.ManagerOptions" %>
+<%@ page import="model.Status" %>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -72,10 +73,10 @@
   <!--- buttons to find certain parameters ---->
   <div class="container">
     <div class="text-center">   <!-- Add Search bar in order to view specific employees and fix columns--->
-      <a class="btn btn-primary" href="View_All_ERR_Submissions" >View All Submissions</a>
-      <a class="btn btn-warning" href="empPendingRequests" >View Pending Submissions</a> <!--- Current ---->
-      <a class="btn btn-success" href="empApprovedRequests" >View Approved Submissions</a> <!------Previous -->
-      <a class="btn btn-danger" href="empDeclinedRequests" >View Declined Submissions</a> <!------Previous -->
+      <a class="btn btn-primary" name="View_All_ERR_Submissions">View All Submissions</a>
+      <a class="btn btn-warning" name="empPendingRequests">View Pending Submissions</a> <!--- Current ---->
+      <a class="btn btn-success" name="empApprovedRequests">View Approved Submissions</a> <!------Previous -->
+      <a class="btn btn-danger" name="empDeclinedRequests">View Declined Submissions</a> <!------Previous -->
     </div>
   </div>
 </section>
@@ -95,7 +96,8 @@
       </thead>
       <tbody>
          <%
-         List<Reimbursement> reimbursements = (List<Reimbursement>) request.getAttribute("reimbursementList");
+         ManagerOptions managerOptions = new ManagerOptions();
+         List<Reimbursement> reimbursements = managerOptions.getByStatus((Status)(request.getAttribute("status"));
          for(Reimbursement reimbursement: reimbursements){
          %>
       <tr>

@@ -12,11 +12,10 @@ import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
-        JDBCEmployeeRepository userRepository = new JDBCEmployeeRepository();
-/*        ManagerOptions managerOptions = new ManagerOptions();
-        managerOptions.register("Javi","user4","password", Position.MANAGER);*/
-        Optional<Employee> employee = userRepository.findByUsername("user4");
-        System.out.println(employee);
+        ManagerOptions managerOptions = new ManagerOptions();
+        Object status = new Object();
+        List<Reimbursement> reimbursements = managerOptions.getByStatus(Status.valueOf(String.valueOf(status)));
+        System.out.println(reimbursements);
 
     }
 }
