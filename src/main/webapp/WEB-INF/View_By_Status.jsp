@@ -28,27 +28,27 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="./ReimbursementRequestForm.html" class="nav-link">
+          <a href="ReimbursementRequestForm.html" class="nav-link">
             Reimbursement Request Form
           </a>
         </li>
         <li class="nav-item">
-          <a href="./EmployeeRegistrationForm.html" class="nav-link">
+          <a href="EmployeeRegistrationForm.html" class="nav-link">
             Employee Registration
           </a>
         </li>
         <li class="nav-item">
-          <a href="./View_All_Employees.html" class="nav-link">
+          <a href="View_All_Employees" class="nav-link">
             View All Employees
           </a>
         </li>
         <li class="nav-item">
-          <a href="./View_All_ERR_Submissions.html" class="nav-link">
+          <a href="View_All_ERR_Submissions" class="nav-link">
             Reimbursement Submissions
           </a>
         </li>
         <li class="nav-item">
-          <a href="./login_page.html" class="nav-link">
+          <a href="login_page.html" class="nav-link">
             Logout
           </a>
         </li>
@@ -73,10 +73,10 @@
   <!--- buttons to find certain parameters ---->
   <div class="container">
     <div class="text-center">   <!-- Add Search bar in order to view specific employees and fix columns--->
-      <a class="btn btn-primary" name="View_All_ERR_Submissions">View All Submissions</a>
-      <a class="btn btn-warning" name="empPendingRequests">View Pending Submissions</a> <!--- Current ---->
-      <a class="btn btn-success" name="empApprovedRequests">View Approved Submissions</a> <!------Previous -->
-      <a class="btn btn-danger" name="empDeclinedRequests">View Declined Submissions</a> <!------Previous -->
+      <a class="btn btn-primary" href="View_All_ERR_Submissions">View All Submissions</a>
+      <a class="btn btn-warning" href="empPendingRequests">View Pending Submissions</a> <!--- Current ---->
+      <a class="btn btn-success" href="empApprovedRequests">View Approved Submissions</a> <!------Previous -->
+      <a class="btn btn-danger" href="empDeclinedRequests">View Declined Submissions</a> <!------Previous -->
     </div>
   </div>
 </section>
@@ -96,8 +96,9 @@
       </thead>
       <tbody>
          <%
+         try{
          ManagerOptions managerOptions = new ManagerOptions();
-         List<Reimbursement> reimbursements = managerOptions.getByStatus((Status)(request.getAttribute("status"));
+         List<Reimbursement> reimbursements = managerOptions.getByStatus((Status)(request.getAttribute("status")));
          for(Reimbursement reimbursement: reimbursements){
          %>
       <tr>
@@ -108,10 +109,21 @@
         <td><%=reimbursement.getAmount() %></td>
         <td><%=reimbursement.getStatus() %></td>
       </tr>
+      <%
+        if(reimbursement.getStatus().equals(Status.PENDING)){
+       %>
+         <td><a class="btn btn-success" href="empApprovedAction?id=<%=reimbursement.getReim_Id()%>" >Approve</a>
+             <a class="btn btn-danger" href="empDeclinedAction?id=<%=reimbursement.getReim_Id()%>" >Decline</a>
+         </td>
+              <%
+              }
+              %>
 
       <%
+
         }
-      %>
+        }catch(NullPointerException e){}
+       %>
       </tbody>
     </table>
   </div>

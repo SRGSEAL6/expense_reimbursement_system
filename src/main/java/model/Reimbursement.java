@@ -4,6 +4,9 @@ public class Reimbursement {
     private String reim_Id, emp_Name, emp_ID, reim_Details;
     private Status reim_Status = Status.PENDING;
     private double amount;
+    public Reimbursement(){
+
+    }
 
     public Reimbursement(String emp_Name, String emp_ID,String reim_Details, double amount) {
         this.emp_Name = emp_Name;

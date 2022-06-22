@@ -1,6 +1,7 @@
 <%@ page import="model.Reimbursement" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Service.ManagerOptions" %>
+<%@ page import="model.Status" %>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,27 +28,27 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="./ReimbursementRequestForm.html" class="nav-link">
+          <a href="ReimbursementRequestForm.html" class="nav-link">
             Reimbursement Request Form
           </a>
         </li>
         <li class="nav-item">
-          <a href="./EmployeeRegistrationForm.html" class="nav-link">
+          <a href="EmployeeRegistrationForm.html" class="nav-link">
             Employee Registration
           </a>
         </li>
         <li class="nav-item">
-          <a href="./View_All_Employees.html" class="nav-link">
+          <a href="View_All_Employees" class="nav-link">
             View All Employees
           </a>
         </li>
         <li class="nav-item">
-          <a href="./View_All_ERR_Submissions.html" class="nav-link">
+          <a href="View_All_ERR_Submissions" class="nav-link">
             Reimbursement Submissions
           </a>
         </li>
         <li class="nav-item">
-          <a href="./login_page.html" class="nav-link">
+          <a href="login_page.html" class="nav-link">
             Logout
           </a>
         </li>
@@ -95,6 +96,7 @@
       </thead>
       <tbody>
          <%
+         try{
          List<Reimbursement> reimbursements = (List<Reimbursement>) request.getAttribute("reimbursementList");
          for(Reimbursement reimbursement: reimbursements){
          %>
@@ -105,10 +107,19 @@
         <td><%=reimbursement.getDetails() %></td>
         <td><%=reimbursement.getAmount() %></td>
         <td><%=reimbursement.getStatus() %></td>
+        <%
+        if(reimbursement.getStatus().equals(Status.PENDING)){
+        %>
+             <td><a class="btn btn-success" href="empApprovedAction?id=<%=reimbursement.getReim_Id()%>" >Approve</a>
+             <a class="btn btn-danger" href="empDeclinedAction?id=<%=reimbursement.getReim_Id()%>" >Decline</a></td>
+        <%
+        }
+        %>
       </tr>
 
       <%
         }
+        }catch(NullPointerException e){}
       %>
       </tbody>
     </table>
