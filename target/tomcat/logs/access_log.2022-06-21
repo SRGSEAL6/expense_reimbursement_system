@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [21/Jun/2022:14:00:11 -0500] "GET /revature.home.project1/login_page.html HTTP/1.1" 200 2347 http-bio-8181-exec-2 347
+0:0:0:0:0:0:0:1 - - [21/Jun/2022:14:00:11 -0500] "GET /revature.home.project1/style.css HTTP/1.1" 404 1015 http-bio-8181-exec-3 8
+0:0:0:0:0:0:0:1 - - [21/Jun/2022:14:00:14 -0500] "GET /revature.home.project1/style.css HTTP/1.1" 404 1015 http-bio-8181-exec-4 3
+0:0:0:0:0:0:0:1 - - [21/Jun/2022:14:00:16 -0500] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8181-exec-5 0
+0:0:0:0:0:0:0:1 - - [21/Jun/2022:14:00:31 -0500] "GET /revature.home.project1/View_All_Employees.jsp HTTP/1.1" 404 1041 http-bio-8181-exec-6 6
