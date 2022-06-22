@@ -12,47 +12,6 @@
 <body class="bg-primary">
 <!---- Managers: Register Employee Login Form ---->
 
-<!--- Navbar --->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-    <div class="container">
-        <a href="#" class="navbar-brand text-light">
-            Expense Reimbursement System
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="ReimbursementRequestForm.html" class="nav-link">
-                        Reimbursement Request Form
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="EmployeeRegistrationForm.html" class="nav-link">
-                        Employee Registration
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="View_All_Employees" name="View_All_Employees" class="nav-link">
-                        View All Employees
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="View_All_ERR_Submissions" class="nav-link">
-                        Reimbursement Submissions
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="login_page.html" class="nav-link">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <Header class="bg-primary">
     <div class="text-center pt-5 m-2">
         <i class='fas fa-eye' style="font-size:100px;"></i>
@@ -65,20 +24,19 @@
 </Header>
 
 <!------- Employee Registration Form ---------->
-<section class="m-5">
     <div class="container">
         <div class="card bg-dark text-light">
             <div class="card-body">
-                <form method="post" action="register">
-                    <div class="p-5">
+                <form action="register" method="post">
+
                         <div class="row mb-3">
                             <div class="col">
-                                <label for="registerEmployeeF-Name" class="form-label">First Name</label>
-                                <input class="form-control" name="fname" id="registerEmployeeF-Name"/>
+                                <label for="fname" class="form-label">First Name</label>
+                                <input class="form-control" name="fname" id="fname"/>
                             </div>
                             <div class="col">
-                                <label for="registerEmployeeL-Name" class="form-label">Last Name</label>
-                                <input class="form-control" name="lname" id="registerEmployeeL-Name"/>
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input class="form-control" name="lname" id="lname"/>
                             </div>
                         </div>
                         <div class="col mb-3">
@@ -91,19 +49,18 @@
                                 <input class="form-control" name="username" id="username"/>
                             </div>
                             <div class="mt-3">
-                                <label for="registerPassword" class="form-label">Employee Password</label>
-                                <input class="form-control" name="password" id="registerPassword"/>
+                                <label for="password" class="form-label">Employee Password</label>
+                                <input class="form-control" name="password" id="password"/>
                             </div>
                         </div>
-                    </div>
                     <div class="text-end p-2">
-                        <a href="register" class="btn btn-primary rounded-pill">Register Employee</a>
+                        <button type="submit" class="btn btn-primary rounded-pill">Register Employee</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</section>
+
 
 <!--- FOOTER  --->
 <footer class="p-5 bg-dark position-relative">
@@ -115,10 +72,5 @@
         </div>
     </div>
 </footer>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

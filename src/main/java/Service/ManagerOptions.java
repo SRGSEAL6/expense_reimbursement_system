@@ -48,10 +48,9 @@ public class ManagerOptions implements MangerOptionsInterface {
 
     @Override
     public void register(String emp_Name,String username,String password, Position emp_Position) {
-        Employee employee = new Employee(emp_Name,username,password,emp_Position);
-        employee.setUsername(username);
+
         String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
-        employee.setPassword(bcryptHashString);
+        Employee employee = new Employee(emp_Name,username,bcryptHashString,emp_Position);
         employeeRepo.save(employee);
     }
 }
