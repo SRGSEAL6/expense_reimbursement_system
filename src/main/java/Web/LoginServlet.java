@@ -4,6 +4,7 @@ import Service.AuthService;
 import Service.AuthServiceImp;
 import model.Employee;
 import model.Position;
+import org.apache.log4j.Logger;
 import repository.JDBCEmployeeRepository;
 
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
+    private static final Logger LOG = Logger.getLogger("mts");
     JDBCEmployeeRepository employeeRepository = new JDBCEmployeeRepository();
     AuthService authService = new AuthServiceImp(employeeRepository);
 
@@ -25,6 +27,7 @@ public class LoginServlet extends HttpServlet {
         String password=req.getParameter("password");
         String page = "";
         boolean b=authService.authenticate(username,password);
+        LOG.info(b);
         if(!b){
             resp.sendRedirect("login_page.html");
         }else{
